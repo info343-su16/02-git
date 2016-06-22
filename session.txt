@@ -1,0 +1,477 @@
+Last login: Mon Jun 20 19:30:24 on console
+is-m430m27-01x:~ iguest$ pwd
+/Users/iguest
+is-m430m27-01x:~ iguest$ cd D
+Desktop/   Documents/ Downloads/ 
+is-m430m27-01x:~ iguest$ cd Desktop/
+is-m430m27-01x:Desktop iguest$ pwd
+/Users/iguest/Desktop
+is-m430m27-01x:Desktop iguest$ ls
+Dropbox.app
+Launch Windows 10
+Logout
+U Drive.inetloc
+UW Google Drive.webloc
+UW OneDrive for Business.webloc
+What Is U Drive.webloc
+is-m430m27-01x:Desktop iguest$ ls /Users/iguest/
+Applications	Library		Public
+Desktop		Movies		anaconda
+Documents	Music		gocode
+Downloads	Pictures
+is-m430m27-01x:Desktop iguest$ ls .
+Dropbox.app
+Launch Windows 10
+Logout
+U Drive.inetloc
+UW Google Drive.webloc
+UW OneDrive for Business.webloc
+What Is U Drive.webloc
+is-m430m27-01x:Desktop iguest$ ls ..
+Applications	Library		Public
+Desktop		Movies		anaconda
+Documents	Music		gocode
+Downloads	Pictures
+is-m430m27-01x:Desktop iguest$ cd /../Desktop
+-bash: cd: /../Desktop: No such file or directory
+is-m430m27-01x:Desktop iguest$ cd /
+is-m430m27-01x:/ iguest$ cd ..
+is-m430m27-01x:/ iguest$ ls
+Applications
+Library
+Network
+System
+Users
+Volumes
+bin
+cores
+dev
+etc
+home
+installer.failurerequests
+net
+opt
+private
+sbin
+tmp
+usr
+var
+is-m430m27-01x:/ iguest$ cd Desk
+-bash: cd: Desk: No such file or directory
+is-m430m27-01x:/ iguest$ cd Desktop
+-bash: cd: Desktop: No such file or directory
+is-m430m27-01x:/ iguest$ cd ~
+is-m430m27-01x:~ iguest$ pwd
+/Users/iguest
+is-m430m27-01x:~ iguest$ man rm
+is-m430m27-01x:~ iguest$ echo "Hello World"
+Hello World
+is-m430m27-01x:~ iguest$ echo "Hello World
+> what happened?
+> where am I?
+> 
+> 
+> 
+> ejalrk
+> stuff?
+> escape?
+> HELP!
+> 
+is-m430m27-01x:~ iguest$ git config --global user.email "your-email-address"
+is-m430m27-01x:~ iguest$ git config --global user.email "joelross@uw.edu"
+is-m430m27-01x:~ iguest$ git config --global user.name "Joel Ross"
+is-m430m27-01x:~ iguest$ pwd
+/Users/iguest
+is-m430m27-01x:~ iguest$ cd Desktop/
+is-m430m27-01x:Desktop iguest$ mkdir git_practice
+is-m430m27-01x:Desktop iguest$ cd git_practice/
+is-m430m27-01x:git_practice iguest$ git init
+Initialized empty Git repository in /Users/iguest/Desktop/git_practice/.git/
+is-m430m27-01x:git_practice iguest$ ls 
+is-m430m27-01x:git_practice iguest$ ls -a
+.	..	.git
+is-m430m27-01x:git_practice iguest$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+is-m430m27-01x:git_practice iguest$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	books.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+is-m430m27-01x:git_practice iguest$ git add books.html 
+is-m430m27-01x:git_practice iguest$ git add .
+is-m430m27-01x:git_practice iguest$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   books.html
+
+is-m430m27-01x:git_practice iguest$ git commit -m "Add book page"
+[master (root-commit) 78dfa35] Add book page
+ 1 file changed, 14 insertions(+)
+ create mode 100644 books.html
+is-m430m27-01x:git_practice iguest$ git status
+On branch master
+nothing to commit, working directory clean
+is-m430m27-01x:git_practice iguest$ git log
+commit 78dfa355f03e67204b9800e6eaa0cfbc9cd5eb87
+Author: Joel Ross <joelross@uw.edu>
+Date:   Tue Jun 21 17:36:24 2016 -0700
+
+    Add book page
+is-m430m27-01x:git_practice iguest$ git log --oneline
+78dfa35 Add book page
+is-m430m27-01x:git_practice iguest$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   books.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+is-m430m27-01x:git_practice iguest$ git add .
+is-m430m27-01x:git_practice iguest$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   books.html
+
+is-m430m27-01x:git_practice iguest$ git commit -m "Add more books"
+[master 6c9cd0c] Add more books
+ 1 file changed, 2 insertions(+)
+is-m430m27-01x:git_practice iguest$ git log --online
+fatal: unrecognized argument: --online
+is-m430m27-01x:git_practice iguest$ git log --one-line
+fatal: unrecognized argument: --one-line
+is-m430m27-01x:git_practice iguest$ git log --oneline
+6c9cd0c Add more books
+78dfa35 Add book page
+is-m430m27-01x:git_practice iguest$ git log
+commit 6c9cd0c2fa02ca8bef4465b2522ea40a6dfa2ca9
+Author: Joel Ross <joelross@uw.edu>
+Date:   Tue Jun 21 17:47:32 2016 -0700
+
+    Add more books
+
+commit 78dfa355f03e67204b9800e6eaa0cfbc9cd5eb87
+Author: Joel Ross <joelross@uw.edu>
+Date:   Tue Jun 21 17:36:24 2016 -0700
+
+    Add book page
+is-m430m27-01x:git_practice iguest$ cd ..
+is-m430m27-01x:Desktop iguest$ git clone https://github.com/joelwross/github_practice.git
+Cloning into 'github_practice'...
+remote: Counting objects: 12, done.
+remote: Compressing objects: 100% (5/5), done.
+Unpacking objects: 100% (12/12), done.
+remote: Total 12 (delta 2), reused 12 (delta 2), pack-reused 0
+Checking connectivity... done.
+is-m430m27-01x:Desktop iguest$ cd github_practice/
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+is-m430m27-01x:github_practice iguest$ git add .
+is-m430m27-01x:github_practice iguest$ git commit -m "Add name"
+[master 7889b51] Add name
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+is-m430m27-01x:github_practice iguest$ git status'
+> 
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+is-m430m27-01x:github_practice iguest$ git push -u origin master
+Username for 'https://github.com': joelwross
+Password for 'https://joelwross@github.com': 
+is-m430m27-01x:github_practice iguest$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': joelwross
+Password for 'https://joelwross@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 276 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/joelwross/github_practice.git
+   a1eb070..7889b51  master -> master
+is-m430m27-01x:github_practice iguest$ git remote -v
+origin	https://github.com/joelwross/github_practice.git (fetch)
+origin	https://github.com/joelwross/github_practice.git (push)
+is-m430m27-01x:github_practice iguest$ git log --one-line
+fatal: unrecognized argument: --one-line
+is-m430m27-01x:github_practice iguest$ git log --oneline
+7889b51 Add name
+a1eb070 Add color question to README
+56eff33 Update README.md
+0ae354b Update README.md
+a085ee6 Initial commit
+is-m430m27-01x:github_practice iguest$ git checkout a1eb070 README.md 
+is-m430m27-01x:github_practice iguest$ git sattus
+git: 'sattus' is not a git command. See 'git --help'.
+
+Did you mean this?
+	status
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+
+is-m430m27-01x:github_practice iguest$ git log --oneline
+7889b51 Add name
+a1eb070 Add color question to README
+56eff33 Update README.md
+0ae354b Update README.md
+a085ee6 Initial commit
+is-m430m27-01x:github_practice iguest$ git revert 56eff33
+error: Your local changes would be overwritten by revert.
+hint: Commit your changes or stash them to proceed.
+fatal: revert failed
+is-m430m27-01x:github_practice iguest$ git checkout -- README.md 
+is-m430m27-01x:github_practice iguest$ git revert 56eff33
+error: Your local changes would be overwritten by revert.
+hint: Commit your changes or stash them to proceed.
+fatal: revert failed
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+
+is-m430m27-01x:github_practice iguest$ git reset HEAD README.md 
+Unstaged changes after reset:
+M	README.md
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+is-m430m27-01x:github_practice iguest$ git revert 56eff33
+error: Your local changes to the following files would be overwritten by merge:
+	README.md
+Please, commit your changes or stash them before you can merge.
+Aborting
+is-m430m27-01x:github_practice iguest$ git stash
+Saved working directory and index state WIP on master: 7889b51 Add name
+HEAD is now at 7889b51 Add name
+is-m430m27-01x:github_practice iguest$ git revert 56eff33
+error: could not revert 56eff33... Update README.md
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+You are currently reverting commit 56eff33.
+  (fix conflicts and run "git revert --continue")
+  (use "git revert --abort" to cancel the revert operation)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+is-m430m27-01x:github_practice iguest$ git add .
+is-m430m27-01x:github_practice iguest$ git commit --no-edit
+[master c358133] Revert "Update README.md"
+ 1 file changed, 1 deletion(-)
+is-m430m27-01x:github_practice iguest$ git log --oneline
+c358133 Revert "Update README.md"
+7889b51 Add name
+a1eb070 Add color question to README
+56eff33 Update README.md
+0ae354b Update README.md
+a085ee6 Initial commit
+is-m430m27-01x:github_practice iguest$ git revert c358133
+[master 90e5466] Revert "Revert "Update README.md""
+ 1 file changed, 1 insertion(+)
+is-m430m27-01x:github_practice iguest$ git log --oneline
+90e5466 Revert "Revert "Update README.md""
+c358133 Revert "Update README.md"
+7889b51 Add name
+a1eb070 Add color question to README
+56eff33 Update README.md
+0ae354b Update README.md
+a085ee6 Initial commit
+is-m430m27-01x:github_practice iguest$ git log
+commit 90e54664f5e1a8d332b0645834578a718fab82b1
+Author: Joel Ross <joelross@uw.edu>
+Date:   Tue Jun 21 18:29:52 2016 -0700
+
+    Revert "Revert "Update README.md""
+    
+    This reverts commit c358133eeba1e440257b469bd18a9d8d93e867d9.
+
+commit c358133eeba1e440257b469bd18a9d8d93e867d9
+Author: Joel Ross <joelross@uw.edu>
+Date:   Tue Jun 21 18:28:25 2016 -0700
+
+    Revert "Update README.md"
+    
+    This reverts commit 56eff33443b08c34c6660ab4cc90b2cbfe4a3b32.
+is-m430m27-01x:github_practice iguest$ git add .
+is-m430m27-01x:github_practice iguest$ git commit -m "Add color"
+[master 0b59c3c] Add color
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+is-m430m27-01x:github_practice iguest$ git pull --no-edit
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 3 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+is-m430m27-01x:github_practice iguest$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 3 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+is-m430m27-01x:github_practice iguest$ git add .
+is-m430m27-01x:github_practice iguest$ git commit --no-edit
+[master 4d15c2a] Merge branch 'master' of https://github.com/joelwross/github_practice
+is-m430m27-01x:github_practice iguest$ git log
+commit 4d15c2ae62190c75100a322396bb806c6dad3349
+Merge: 0b59c3c 2f43dce
+Author: Joel Ross <joelross@uw.edu>
+Date:   Tue Jun 21 18:53:58 2016 -0700
+
+    Merge branch 'master' of https://github.com/joelwross/github_practice
+    
+    # Conflicts:
+    #   README.md
+
+commit 2f43dcec5f5368f4d7755a2b62baae979186b5ac
+Author: Joel Ross <joelross@uw.edu>
+Date:   Tue Jun 21 18:44:25 2016 -0700
+
+is-m430m27-01x:github_practice iguest$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (10/10), 1.06 KiB | 0 bytes/s, done.
+Total 10 (delta 3), reused 0 (delta 0)
+To https://github.com/joelwross/github_practice.git
+   2f43dce..4d15c2a  master -> master
+is-m430m27-01x:github_practice iguest$ git remote add upstream https://github.com/info343-su16/github_practice
+is-m430m27-01x:github_practice iguest$ git remote -v
+origin	https://github.com/joelwross/github_practice.git (fetch)
+origin	https://github.com/joelwross/github_practice.git (push)
+upstream	https://github.com/info343-su16/github_practice (fetch)
+upstream	https://github.com/info343-su16/github_practice (push)
+is-m430m27-01x:github_practice iguest$ git pull upstream
+From https://github.com/info343-su16/github_practice
+ * [new branch]      master     -> upstream/master
+You asked to pull from the remote 'upstream', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+is-m430m27-01x:github_practice iguest$ git pull upstream master
+From https://github.com/info343-su16/github_practice
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+is-m430m27-01x:github_practice iguest$ 
